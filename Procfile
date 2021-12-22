@@ -1,0 +1,1 @@
+web: gunicorn virgoarts.wsgi --log-file -
