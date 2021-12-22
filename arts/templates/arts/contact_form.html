@@ -1,0 +1,16 @@
+<form action="." method="POST" class="contact-form">
+    {% csrf_token %}
+    <div class="input-group tm-mb-30">
+        {{form.name}}
+        {{form.name.errors}}
+    </div>
+    <div class="input-group tm-mb-30">
+        {{form.email}}
+    </div>
+    <div class="input-group tm-mb-30">
+        {{form.message}}
+    </div>
+    <div class="input-group justify-content-end">
+        <input type="submit" class="btn btn-primary tm-btn-pad-2" value="Send">
+    </div>
+</form>
