@@ -141,11 +141,6 @@ CKEDITOR_CONFIGS = {
     },
 }
 
-if os.getcwd() == '/app':
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    SECURE_SSL_REDIRECT = TRUE
-    DEBUG = FALSE
-
 SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
 
 # Static files (CSS, JavaScript, Images)
