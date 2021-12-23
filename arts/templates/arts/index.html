@@ -71,8 +71,8 @@ https://templatemo.com/tm-560-astro-motion
                 </div>
                 
                 <div class="intro-right">
-                  <a href=""><img src="{{a.image1.url}}" alt="Image" class="img-fluid intro-img-1"></a>
-                  <a href=""><img src="{{a.image2.url}}" alt="Image" class="img-fluid intro-img-2"></a>
+                  <a href="#"><img src="{{a.image1.url}}" alt="Image" class="img-fluid intro-img-1"></a>
+                  <a href="#"><img src="{{a.image2.url}}" alt="Image" class="img-fluid intro-img-2"></a>
                 </div>
                 {% endfor %}
                 <div class="circle intro-circle-1"></div>
@@ -95,11 +95,7 @@ https://templatemo.com/tm-560-astro-motion
               <div class="mx-auto tm-border-top gallery-slider">
                 {% for a in arts %}
                 <figure class="effect-julia item">
-                    <img src="{{a.pic.url}}" alt="Image">
-                    <figcaption>
-        
-                        <a href="#">View more</a>
-                    </figcaption>
+                    <img id="art-{{forloop.counter}}" src="{{a.pic.url}}" alt="Image">
                 </figure>
                 {% endfor %}
  
@@ -220,7 +216,37 @@ https://templatemo.com/tm-560-astro-motion
         return false
     });
 
+
   </script>
+
+  {% for a in about %}
+  <script>
+
+    $('.intro-img-1').click(function(){
+        Swal.fire({
+            imageUrl:"{{a.image1.url}}",
+        });
+    })
+
+    $('.intro-img-2').click(function(){
+        Swal.fire({
+            imageUrl:"{{a.image2.url}}",
+        });
+    })
+
+  </script>
+  {% endfor %}
+
+  {% for a in arts %}
+  <script>
+
+    $('#art-{{forloop.counter}}').click(function(){
+        Swal.fire({
+            imageUrl:"{{a.pic.url}}",
+        });
+    })
+  </script>
+  {% endfor %}
 
 {% load sweetify %}
 {% sweetify %}
