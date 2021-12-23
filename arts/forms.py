@@ -1,7 +1,6 @@
 from django.forms import ModelForm
 from django import forms
 from . models import Contact
-from . validators import *
 
 class ContactForm(ModelForm):
     name = forms.CharField(max_length=40, widget=forms.TextInput(attrs={'class':'form-control rounded-0 border-top-0 border-end-0 border-start-0', 'name':'name', 'type':'text', 'placeholder':'Full Name', 'type':'name'}))
