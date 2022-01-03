@@ -9,7 +9,7 @@ from . forms import *
 # Create your views here.
 
 def home(request):
-    arts = Art.objects.all()
+    arts = Art.objects.all().order_by('-date_created')
     virg = Virgo.objects.all()
     about = About.objects.all()
     form = ContactForm()
