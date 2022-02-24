@@ -15,7 +15,7 @@ import os
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-
+from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!(gzcs@8r)rr5d^6$2pa2amx!dnz_cpnxsj-)!lvp#cq^po_zg'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -163,7 +163,7 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 cloudinary.config(
-    cloud_name = 'kay-programmer',
-    api_key = '172699863129131',
-    api_secret = 'bfGuoJEDDAfZS7k47bZB2iZ3VfU'
+    cloud_name = config('cloud_name'),
+    api_key = config('api_key'),
+    api_secret = config('api_secret')
 )
